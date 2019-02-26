@@ -4,7 +4,7 @@
 FROM s390x/alpine
 MAINTAINER ifree.net
 
-ENV SS_VER 3.2.3
+ENV SS_VER 3.2.4
 ENV SS_URL https://github.com/shadowsocks/shadowsocks-libev/archive/v$SS_VER.tar.gz
 ENV SS_DIR shadowsocks-libev-$SS_VER
 
@@ -44,7 +44,7 @@ RUN set -ex \
 
 ENV SERVER_ADDR 0.0.0.0
 ENV SERVER_PORT 443
-ENV METHOD      rc4-md5
+ENV METHOD      ChaCha20
 ENV PASSWORD=asdfjkl
 ENV TIMEOUT     60
 ENV DNS_ADDR    176.103.130.130,176.103.130.131
