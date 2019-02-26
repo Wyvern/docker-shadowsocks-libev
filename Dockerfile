@@ -37,7 +37,7 @@ RUN set -ex \
         && curl -sSL https://github.com/shadowsocks/libbloom/archive/master.tar.gz | tar xz --strip 1 -C libbloom \
         && ./autogen.sh \
         && ./configure --disable-documentation \
-        && make install \
+        && make -j install \
         && cd .. \
         && rm -rf $SS_DIR \
     && apk del TMP
@@ -60,4 +60,4 @@ CMD ss-server -s "$SERVER_ADDR" \
               -t "$TIMEOUT"     \
               -d "$DNS_ADDR"    \
               -u                \
-              --fast-open $OPTIONS
+              --fast-open
