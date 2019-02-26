@@ -8,7 +8,7 @@ ENV SS_VER 3.2.4
 ENV SS_URL https://github.com/shadowsocks/shadowsocks-libev/archive/v$SS_VER.tar.gz
 ENV SS_DIR shadowsocks-libev-$SS_VER
 
-RUN set -ex \
+RUN set -ex apk update && apk upgrade \
     && apk add --no-cache c-ares \
                           openssl \
                           libev \
